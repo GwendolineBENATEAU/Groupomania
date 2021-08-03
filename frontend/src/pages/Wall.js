@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import CardPost from './CardPost'
+import PostForm from '../components/PostForm'
+import CardPost from '../components/CardPost'
 
 import Grid from '@material-ui/core/Grid'
 import Box from '@material-ui/core/Box'
@@ -29,6 +30,8 @@ export default function Wall() {
             <div className="wall">
                   <Grid container spacing={3}>
                         <Grid item xs={12}>
+                              <h2>Créer une publication</h2>
+                              <PostForm />
                               <h2>Dernières publications</h2>
                               {isLoading ? (
                                     <Box>
