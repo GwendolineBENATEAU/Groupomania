@@ -16,8 +16,8 @@
       "type": "richtext"
     },
     "message": {
-      "model": "message",
-      "via": "comments"
+      "via": "comments",
+      "model": "message"
     }
   }
 }
