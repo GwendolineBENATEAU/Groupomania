@@ -8,6 +8,7 @@ import {
 
 import Log from './Log'
 import Wall from './Wall'
+import Post from './Post'
 
 import Container from '@material-ui/core/Container'
 
@@ -31,6 +32,11 @@ export default function App() {
                                           path="/wall"
                                           exact
                                           component={Wall}
+                                    />
+                                    <Route
+                                          path="/post/:id"
+                                          exact
+                                          component={Post}
                                     />
                                     <Redirect to="/" />
                               </Switch>

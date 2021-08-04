@@ -1,21 +1,28 @@
 import React from 'react'
 import { API_URL } from '../config'
-import CardComment from './CardComment'
+import { Link } from 'react-router-dom'
 
 import { makeStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
 import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
+import CardActions from '@material-ui/core/CardActions'
 import Avatar from '@material-ui/core/Avatar'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
-import { red } from '@material-ui/core/colors'
+import { indigo, red } from '@material-ui/core/colors'
+import Divider from '@material-ui/core/Divider'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
+import PermIdentityIcon from '@material-ui/icons/PermIdentity'
+import FavoriteIcon from '@material-ui/icons/Favorite'
+import ShareIcon from '@material-ui/icons/Share'
+import ChatIcon from '@material-ui/icons/Chat'
 
 const useStyles = makeStyles((theme) => ({
       root: {
             maxWidth: '100%',
+            marginBottom: 30,
       },
       media: {
             height: 0,
@@ -24,25 +31,23 @@ const useStyles = makeStyles((theme) => ({
       avatar: {
             backgroundColor: red[500],
       },
+      chatIcon: {
+            color: indigo[500],
+      },
 }))
 
-export default function CardPost({ post }) {
+export default function CardPosts({ post }) {
       const classes = useStyles()
 
       return (
-            <Card
-                  className={classes.root}
-                  style={{
-                        marginBottom: 30,
-                  }}
-            >
+            <Card className={classes.root}>
                   <CardHeader
                         avatar={
                               <Avatar
                                     aria-label="recipe"
                                     className={classes.avatar}
                               >
-                                    R
+                                    <PermIdentityIcon />
                               </Avatar>
                         }
                         action={
@@ -74,7 +79,25 @@ export default function CardPost({ post }) {
                         </Typography>
                   </CardContent>
 
-                  <CardComment />
+                  <Divider orientation="horizontal" />
+
+                  <CardActions disableSpacing>
+                        <Link to={`/post/${post.id}`}>
+                              <IconButton
+                                    aria-label="comments"
+                                    className={classes.chatIcon}
+                              >
+                                    <ChatIcon />
+                              </IconButton>
+                        </Link>
+
+                        <IconButton aria-label="favorites">
+                              <FavoriteIcon />
+                        </IconButton>
+                        <IconButton aria-label="share">
+                              <ShareIcon />
+                        </IconButton>
+                  </CardActions>
             </Card>
       )
 }
