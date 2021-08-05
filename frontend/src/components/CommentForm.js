@@ -6,12 +6,12 @@ import SendOutlinedIcon from '@material-ui/icons/SendOutlined'
 const CommentForm = (props) => {
       const [comment, setComment] = useState({})
 
-      const handleSubmit = async (event) => {
-            event.preventDefault()
+      const handleSubmit = async () => {
             console.log(comment)
             try {
                   const data = CommentAPI.create(comment)
                   console.log(data)
+                  props.fetchAllComments()
             } catch (error) {
                   console.log(error)
             }
@@ -24,6 +24,7 @@ const CommentForm = (props) => {
             setComment({
                   //prend l'ancienne valeur du champ et rajoute à la suite les autres valeurs
                   ...comment,
+                  message: props.id,
                   [name]: value,
             })
       }

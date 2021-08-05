@@ -10,7 +10,7 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
 export default function Post() {
       const { id } = useParams()
-      let [postState, setPost] = useState(null)
+      const [postState, setPost] = useState(null)
       const [isLoading, setIsLoading] = useState(false)
 
       useEffect(() => {
@@ -68,7 +68,7 @@ export default function Post() {
                               <h2>{isLoading ? postState.title : ''}</h2>
                               <p>{isLoading ? postState.content : ''}</p>
                               <h2 style={{ marginTop: 80 }}>Réagissez !</h2>
-                              <CommentForm />
+                              <CommentForm id={id} />
                               <CommentsList />
                         </Grid>
                   </Grid>

@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React, { useEffect, useState } from 'react'
+import CommentAPI from '../fetch/CommentAPI'
 import {
       List,
       ListItem,
@@ -11,85 +11,50 @@ import {
 } from '@material-ui/core'
 
 export default function CommentsList() {
+      const [comments, setComments] = useState([])
+
+      useEffect(() => {
+            fetchAllComments()
+      }, [])
+
+      const fetchAllComments = async () => {
+            try {
+                  const data = await CommentAPI.findAll()
+                  setComments(data)
+                  console.log(data)
+            } catch (error) {
+                  console.log(error)
+            }
+      }
+
       return (
             <List style={{ marginTop: 30 }}>
-                  <ListItem alignItems="flex-start">
-                        <ListItemAvatar>
-                              <Avatar
-                                    alt="Remy Sharp"
-                                    src="/static/images/avatar/1.jpg"
-                              />
-                        </ListItemAvatar>
-                        <ListItemText
-                              primary="Brunch this weekend?"
-                              secondary={
-                                    <React.Fragment>
-                                          <Typography
-                                                component="span"
-                                                variant="body2"
-                                                color="textPrimary"
-                                          >
-                                                Ali Connors
-                                          </Typography>
-                                          {
-                                                " — I'll be in your neighborhood doing errands this…"
+                  {comments
+                        .map((comment) => (
+                              <ListItem
+                                    alignItems="flex-start"
+                                    key={comment.id}
+                              >
+                                    <ListItemAvatar>
+                                          <Avatar />
+                                    </ListItemAvatar>
+                                    <ListItemText
+                                          primary={comment.pseudo}
+                                          secondary={
+                                                <React.Fragment>
+                                                      <Typography
+                                                            component="span"
+                                                            variant="subtitle1"
+                                                            color="textSecondary"
+                                                      >
+                                                            {comment.content}
+                                                      </Typography>
+                                                </React.Fragment>
                                           }
-                                    </React.Fragment>
-                              }
-                        />
-                  </ListItem>
-                  <Divider variant="inset" component="li" />
-                  <ListItem alignItems="flex-start">
-                        <ListItemAvatar>
-                              <Avatar
-                                    alt="Remy Sharp"
-                                    src="/static/images/avatar/1.jpg"
-                              />
-                        </ListItemAvatar>
-                        <ListItemText
-                              primary="Brunch this weekend?"
-                              secondary={
-                                    <React.Fragment>
-                                          <Typography
-                                                component="span"
-                                                variant="body2"
-                                                color="textPrimary"
-                                          >
-                                                Ali Connors
-                                          </Typography>
-                                          {
-                                                " — I'll be in your neighborhood doing errands this…"
-                                          }
-                                    </React.Fragment>
-                              }
-                        />
-                  </ListItem>
-                  <Divider variant="inset" component="li" />
-                  <ListItem alignItems="flex-start">
-                        <ListItemAvatar>
-                              <Avatar
-                                    alt="Remy Sharp"
-                                    src="/static/images/avatar/1.jpg"
-                              />
-                        </ListItemAvatar>
-                        <ListItemText
-                              primary="Brunch this weekend?"
-                              secondary={
-                                    <React.Fragment>
-                                          <Typography
-                                                component="span"
-                                                variant="body2"
-                                                color="textPrimary"
-                                          >
-                                                Ali Connors
-                                          </Typography>
-                                          {
-                                                " — I'll be in your neighborhood doing errands this…"
-                                          }
-                                    </React.Fragment>
-                              }
-                        />
-                  </ListItem>
+                                    />
+                              </ListItem>
+                        ))
+                        .reverse()}
                   <Divider variant="inset" component="li" />
             </List>
       )

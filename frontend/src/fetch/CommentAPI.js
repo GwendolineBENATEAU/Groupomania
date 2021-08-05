@@ -6,7 +6,12 @@ function create(comment) {
       return axios.post(`${API_URL}/comments`, comment)
 }
 
+function findAll() {
+      return axios.get(`${API_URL}/comments`).then((res) => res.data)
+}
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
       create,
+      findAll,
 }
