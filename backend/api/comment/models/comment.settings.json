@@ -13,11 +13,15 @@
   "pluginOptions": {},
   "attributes": {
     "content": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "message": {
       "via": "comments",
       "model": "message"
+    },
+    "pseudo": {
+      "type": "string"
     }
   }
 }

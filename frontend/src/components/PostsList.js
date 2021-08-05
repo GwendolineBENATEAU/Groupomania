@@ -2,17 +2,21 @@ import React from 'react'
 import { API_URL } from '../config'
 import { Link } from 'react-router-dom'
 
-import { makeStyles } from '@material-ui/core/styles'
-import Card from '@material-ui/core/Card'
-import CardHeader from '@material-ui/core/CardHeader'
-import CardMedia from '@material-ui/core/CardMedia'
-import CardContent from '@material-ui/core/CardContent'
-import CardActions from '@material-ui/core/CardActions'
-import Avatar from '@material-ui/core/Avatar'
-import IconButton from '@material-ui/core/IconButton'
-import Typography from '@material-ui/core/Typography'
+import {
+      makeStyles,
+      Avatar,
+      IconButton,
+      Typography,
+      Divider,
+} from '@material-ui/core'
+import {
+      Card,
+      CardHeader,
+      CardMedia,
+      CardContent,
+      CardActions,
+} from '@material-ui/core'
 import { indigo, red } from '@material-ui/core/colors'
-import Divider from '@material-ui/core/Divider'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
 import PermIdentityIcon from '@material-ui/icons/PermIdentity'
 import FavoriteIcon from '@material-ui/icons/Favorite'
@@ -70,11 +74,7 @@ export default function CardPosts({ post }) {
                   />
 
                   <CardContent>
-                        <Typography
-                              variant="body2"
-                              color="textSecondary"
-                              component="p"
-                        >
+                        <Typography variant="body2" color="textSecondary">
                               {post.content}
                         </Typography>
                   </CardContent>
@@ -87,7 +87,17 @@ export default function CardPosts({ post }) {
                                     aria-label="comments"
                                     className={classes.chatIcon}
                               >
-                                    <ChatIcon />
+                                    <ChatIcon
+                                          style={{
+                                                paddingRight: 10,
+                                          }}
+                                    />
+                                    <Typography
+                                          variant="body2"
+                                          color="indigo[500]"
+                                    >
+                                          Afficher les commentaires{' '}
+                                    </Typography>
                               </IconButton>
                         </Link>
 

@@ -1,29 +1,113 @@
-import React from 'react'
-import { Grid, Button, List } from '@material-ui/core'
-//import { useEffect, useState } from 'react'
-//import { useParams, Link } from 'react-router-dom'
-//import { API_URL } from '../config'
-
+import React, { useState } from 'react'
+import CommentAPI from '../fetch/CommentAPI'
+import { Button, TextField } from '@material-ui/core'
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined'
-import ListItem from '@material-ui/core/ListItem'
-import Divider from '@material-ui/core/Divider'
-import ListItemText from '@material-ui/core/ListItemText'
-import ListItemAvatar from '@material-ui/core/ListItemAvatar'
-import Avatar from '@material-ui/core/Avatar'
-import Typography from '@material-ui/core/Typography'
-import TextField from '@material-ui/core/TextField'
 
-export default function CommentForm() {
+const CommentForm = (props) => {
+      const [comment, setComment] = useState({})
+
+      const handleSubmit = async (event) => {
+            event.preventDefault()
+            console.log(comment)
+            try {
+                  const data = CommentAPI.create(comment)
+                  console.log(data)
+            } catch (error) {
+                  console.log(error)
+            }
+      }
+
+      const handleChange = ({ currentTarget }) => {
+            //const name = currentTarget.name
+            //const value = currentTarget.value
+            const { name, value } = currentTarget
+            setComment({
+                  //prend l'ancienne valeur du champ et rajoute à la suite les autres valeurs
+                  ...comment,
+                  [name]: value,
+            })
+      }
+
+      return (
+            <form onSubmit={handleSubmit}>
+                  <TextField
+                        onChange={handleChange}
+                        id="pseudo"
+                        name="pseudo"
+                        label="Pseudo"
+                        type="text"
+                        placeholder="Renseignez votre nom …"
+                        margin="normal"
+                        InputLabelProps={{
+                              shrink: true,
+                        }}
+                        variant="outlined"
+                  />
+                  <TextField
+                        onChange={handleChange}
+                        id="content"
+                        name="content"
+                        label="Commentaire"
+                        type="text"
+                        placeholder="... et écrivez votre commentaire …"
+                        fullWidth
+                        multiline
+                        margin="normal"
+                        InputLabelProps={{
+                              shrink: true,
+                        }}
+                        variant="outlined"
+                  />
+                  <Button
+                        type="submit"
+                        variant="contained"
+                        color="primary"
+                        style={{ marginTop: 20 }}
+                  >
+                        <SendOutlinedIcon
+                              style={{
+                                    paddingRight: 10,
+                              }}
+                        />
+                        <span>Envoyer</span>
+                  </Button>
+            </form>
+      )
+}
+export default CommentForm
+
+////////////////////////////////
+/*export default function CommentForm() {
+      const [comment, setComment] = useState({})
+      const handleSubmit = (event) => {
+            event.preventDefault()
+      }
+      try {
+            //const data = axios.post(`${API_URL}/comments`, comment)
+            //console.log(data)
+      } catch (error) {
+            console.log(error)
+      }
+      const handleChange = ({ currentTarget }) => {
+            const { name, value } = currentTarget
+            setComment({
+                  ...comment,
+                  [name]: value,
+            })
+      } 
+
       return (
             <Grid container spacing={2}>
                   <Grid item xs={12}>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                               <TextField
-                                    id="outlined-full-width"
+                                    onChange={handleChange}
+                                    id="content"
+                                    name="content"
                                     label="Commentaire"
                                     type="text"
-                                    style={{ marginTop: 60 }}
-                                    placeholder="Réagissez ! Écrivez votre commentaire …"
+                                    style={{ marginTop: 80 }}
+                                    placeholder="Réagissez, écrivez votre commentaire …"
                                     fullWidth
                                     multiline
                                     margin="normal"
@@ -33,9 +117,10 @@ export default function CommentForm() {
                                     variant="outlined"
                               />
                               <Button
+                                    type="submit"
                                     variant="contained"
                                     color="primary"
-                                    style={{ marginTop: 10 }}
+                                    style={{ marginTop: 20 }}
                               >
                                     <SendOutlinedIcon
                                           style={{
@@ -46,88 +131,8 @@ export default function CommentForm() {
                               </Button>
                         </form>
                   </Grid>
-                  <Grid item xs={12}>
-                        <List style={{ marginTop: 20 }}>
-                              <ListItem alignItems="flex-start">
-                                    <ListItemAvatar>
-                                          <Avatar
-                                                alt="Remy Sharp"
-                                                src="/static/images/avatar/1.jpg"
-                                          />
-                                    </ListItemAvatar>
-                                    <ListItemText
-                                          primary="Brunch this weekend?"
-                                          secondary={
-                                                <React.Fragment>
-                                                      <Typography
-                                                            component="span"
-                                                            variant="body2"
-                                                            color="textPrimary"
-                                                      >
-                                                            Ali Connors
-                                                      </Typography>
-                                                      {
-                                                            " — I'll be in your neighborhood doing errands this…"
-                                                      }
-                                                </React.Fragment>
-                                          }
-                                    />
-                              </ListItem>
-                              <Divider variant="inset" component="li" />
-                              <ListItem alignItems="flex-start">
-                                    <ListItemAvatar>
-                                          <Avatar
-                                                alt="Remy Sharp"
-                                                src="/static/images/avatar/1.jpg"
-                                          />
-                                    </ListItemAvatar>
-                                    <ListItemText
-                                          primary="Brunch this weekend?"
-                                          secondary={
-                                                <React.Fragment>
-                                                      <Typography
-                                                            component="span"
-                                                            variant="body2"
-                                                            color="textPrimary"
-                                                      >
-                                                            Ali Connors
-                                                      </Typography>
-                                                      {
-                                                            " — I'll be in your neighborhood doing errands this…"
-                                                      }
-                                                </React.Fragment>
-                                          }
-                                    />
-                              </ListItem>
-                              <Divider variant="inset" component="li" />
-                              <ListItem alignItems="flex-start">
-                                    <ListItemAvatar>
-                                          <Avatar
-                                                alt="Remy Sharp"
-                                                src="/static/images/avatar/1.jpg"
-                                          />
-                                    </ListItemAvatar>
-                                    <ListItemText
-                                          primary="Brunch this weekend?"
-                                          secondary={
-                                                <React.Fragment>
-                                                      <Typography
-                                                            component="span"
-                                                            variant="body2"
-                                                            color="textPrimary"
-                                                      >
-                                                            Ali Connors
-                                                      </Typography>
-                                                      {
-                                                            " — I'll be in your neighborhood doing errands this…"
-                                                      }
-                                                </React.Fragment>
-                                          }
-                                    />
-                              </ListItem>
-                              <Divider variant="inset" component="li" />
-                        </List>
-                  </Grid>
+                  <CommentsList />
             </Grid>
       )
-}
+}*/
+////////////////////////////

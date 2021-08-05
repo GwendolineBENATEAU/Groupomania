@@ -6,9 +6,9 @@ import {
       Switch,
 } from 'react-router-dom'
 
-import Log from './Log'
-import Wall from './Wall'
-import Post from './Post'
+import Log from './pages/Log'
+import Wall from './pages/Wall'
+import Post from './pages/Post'
 
 import Container from '@material-ui/core/Container'
 

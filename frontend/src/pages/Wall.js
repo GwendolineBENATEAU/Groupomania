@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { API_URL } from '../config'
+import MessageAPI from '../fetch/MessageAPI'
+
 import PostForm from '../components/PostForm'
-import CardPosts from '../components/CardPosts'
+import PostsList from '../components/PostsList'
 
 import { Grid, Box, Button } from '@material-ui/core'
 import Skeleton from '@material-ui/lab/Skeleton'
@@ -13,15 +14,17 @@ export default function Wall() {
       const [posts, setPosts] = useState(null)
 
       useEffect(() => {
-            fetch(`${API_URL}/messages`)
-                  .then((res) => res.json())
-                  .then((response) => {
-                        setTimeout(() => {
-                              setPosts(response)
-                              setIsLoading(false)
-                        }, 2000)
-                  })
+            fetchAllPosts()
       }, [])
+
+      //utilisation de async await pour éviter les .then imbriqués
+      const fetchAllPosts = async () => {
+            const data = await MessageAPI.findAll()
+            setTimeout(() => {
+                  setPosts(data)
+                  setIsLoading(false)
+            }, 3000)
+      }
 
       return (
             <div className="wall">
@@ -102,7 +105,7 @@ export default function Wall() {
                               ) : (
                                     posts
                                           .map((post) => (
-                                                <CardPosts
+                                                <PostsList
                                                       post={post}
                                                       key={post.id}
                                                 />
