@@ -14,18 +14,22 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true
+      "required": true,
+      "minLength": 2,
+      "maxLength": 150
     },
     "content": {
       "type": "richtext",
-      "required": true
+      "required": true,
+      "minLength": 2,
+      "maxLength": 2000
     },
     "image": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
-        "images",
         "files",
+        "images",
         "videos"
       ],
       "plugin": "upload",

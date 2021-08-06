@@ -75,7 +75,11 @@ export default function CardPosts({ post }) {
 
                   <CardContent>
                         <Typography variant="body2" color="textSecondary">
-                              {post.content}
+                              {post.content && post.content.substring(0, 600)}
+                              <Link to={`/post/${post.id}`}>
+                                    {' '}
+                                    ... Lire la suite
+                              </Link>
                         </Typography>
                   </CardContent>
 

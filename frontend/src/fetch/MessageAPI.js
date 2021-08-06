@@ -1,5 +1,4 @@
 import { API_URL } from '../config'
-//URL_POST = API_URL + /messages
 import axios from 'axios'
 
 function findAll() {
@@ -22,3 +21,5 @@ export default {
       findOne,
       findComments,
 }
+
+//URL_POST = API_URL + /messages

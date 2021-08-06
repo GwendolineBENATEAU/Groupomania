@@ -1,5 +1,4 @@
 import { API_URL } from '../config'
-//URL_COMMENTS = API_URL + /comments
 import axios from 'axios'
 
 function create(comment) {
@@ -16,3 +15,5 @@ export default {
       create,
       findAll,
 }
+
+//URL_COMMENTS = API_URL + /comments

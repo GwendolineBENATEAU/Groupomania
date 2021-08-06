@@ -42,17 +42,31 @@ export default function CommentsList() {
                                           <Avatar />
                                     </ListItemAvatar>
                                     <ListItemText
-                                          primary={comment.pseudo}
-                                          secondary={
+                                          primary={
                                                 <React.Fragment>
+                                                      {comment.pseudo}
+
                                                       <Typography
                                                             component="span"
-                                                            variant="subtitle1"
+                                                            variant="subtitle2"
                                                             color="textSecondary"
                                                       >
-                                                            {comment.content}
+                                                            {' - '}
+                                                            {comment.created_at.substring(
+                                                                  0,
+                                                                  10
+                                                            )}
                                                       </Typography>
                                                 </React.Fragment>
+                                          }
+                                          secondary={
+                                                <Typography
+                                                      component="span"
+                                                      variant="subtitle1"
+                                                      color="textSecondary"
+                                                >
+                                                      {comment.content}
+                                                </Typography>
                                           }
                                     />
                               </ListItem>

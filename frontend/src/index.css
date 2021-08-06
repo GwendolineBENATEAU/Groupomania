@@ -18,6 +18,6 @@ p {
   margin: 0;
 }
 
-a { 
+a:link { 
  text-decoration:none; 
 } 
