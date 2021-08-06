@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import MessageAPI from '../fetch/MessageAPI'
 
 import PostForm from '../components/PostForm'
 import PostsList from '../components/PostsList'
 
-import { Grid, Box, Button } from '@material-ui/core'
+import { Grid, Box } from '@material-ui/core'
 import Skeleton from '@material-ui/lab/Skeleton'
-import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 
 export default function Wall() {
       const [isLoading, setIsLoading] = useState(true)
@@ -28,26 +26,6 @@ export default function Wall() {
 
       return (
             <div className="wall">
-                  <nav
-                        style={{
-                              paddingBottom: 20,
-                              paddingTop: 20,
-                        }}
-                  >
-                        <Link to="/">
-                              <Button
-                                    variant="contained"
-                                    style={{ float: 'right' }}
-                              >
-                                    <ExitToAppIcon
-                                          style={{
-                                                paddingRight: 10,
-                                          }}
-                                    />
-                                    <span>Déconnexion</span>
-                              </Button>
-                        </Link>
-                  </nav>
                   <Grid container spacing={2}>
                         <Grid item xs={12}>
                               <h2>Créer une publication</h2>

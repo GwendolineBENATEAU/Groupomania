@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import CommentAPI from '../fetch/CommentAPI'
+import { useParams } from 'react-router-dom'
+import MessageAPI from '../fetch/MessageAPI'
 import {
       List,
       ListItem,
@@ -11,15 +12,17 @@ import {
 } from '@material-ui/core'
 
 export default function CommentsList() {
+      const { id } = useParams()
       const [comments, setComments] = useState([])
 
       useEffect(() => {
-            fetchAllComments()
+            fetchComments()
+            // eslint-disable-next-line react-hooks/exhaustive-deps
       }, [])
 
-      const fetchAllComments = async () => {
+      const fetchComments = async () => {
             try {
-                  const data = await CommentAPI.findAll()
+                  const data = await MessageAPI.findComments(id)
                   setComments(data)
                   console.log(data)
             } catch (error) {

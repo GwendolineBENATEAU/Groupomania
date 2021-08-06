@@ -6,6 +6,7 @@ function create(comment) {
       return axios.post(`${API_URL}/comments`, comment)
 }
 
+//route plus utilisée pour le moment
 function findAll() {
       return axios.get(`${API_URL}/comments`).then((res) => res.data)
 }

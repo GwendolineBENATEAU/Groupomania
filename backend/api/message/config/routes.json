@@ -10,6 +10,14 @@
     },
     {
       "method": "GET",
+      "path": "/messages/:id/comments",
+      "handler": "message.findComments",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/messages/count",
       "handler": "message.count",
       "config": {
