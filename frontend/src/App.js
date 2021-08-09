@@ -6,7 +6,9 @@ import {
       Switch,
 } from 'react-router-dom'
 import AuthContext from './contexts/AuthContext'
+import PrivateRoute from './contexts/PrivateRoute'
 import UserAPI from './fetch/UserAPI'
+import NavBar from './components/NavBar'
 
 import Login from './pages/Login'
 import Wall from './pages/Wall'
@@ -14,7 +16,6 @@ import Post from './pages/Post'
 import AdminPostsPage from './pages/AdminPostsPage'
 
 import Container from '@material-ui/core/Container'
-import PrivateRoute from './contexts/PrivateRoute'
 
 export default function App() {
       const [isAuthenticated, setIsAuthenticated] = useState(
@@ -28,6 +29,7 @@ export default function App() {
                   <Container>
                         <div className="App">
                               <Router>
+                                    <NavBar />
                                     <Switch>
                                           <Route
                                                 path="/"

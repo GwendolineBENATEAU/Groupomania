@@ -26,11 +26,15 @@ function isAuthenticated() {
       return false
 }
 
+function logout() {
+      window.localStorage.removeItem('jwtToken')
+      window.localStorage.removeItem('username')
+      delete axios.defaults.headers['Authorization']
+}
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
       login,
       isAuthenticated,
+      logout,
 }
-
-//URL_LOGIN = API_URL + /auth/local
-//URL_REGISTER = API_URL + /auth/local/register
