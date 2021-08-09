@@ -4,11 +4,11 @@
 
 2. Dans un terminal, accéder au dossier du __frontend__ :
  - Installer les dépendances : ``npm install`` 
- - Démarer le serveur de développement : ``npm run start`` 
+ - Démarer le serveur : ``npm run start`` 
 
 3. Dans un autre terminal, accéder au dossier du __backend__ :
  - Installer les dépendances : ``npm install`` 
- - Lancer le serveur node : ``npm run start`` 
+ - Lancer le serveur : ``npm run start`` 
 
 4. Rendez-vous sur http://localhost:3000/  
 
