@@ -70,7 +70,7 @@ export default function CardPosts({ post }) {
                                     ? API_URL + post.image.formats.medium.url
                                     : '...'
                         }
-                        title="Image du post"
+                        title={post.title}
                   />
 
                   <CardContent>

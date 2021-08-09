@@ -1,9 +1,13 @@
-import React, { useState } from 'react'
-import { /* useParams, */ Link } from 'react-router-dom'
+import React, { useState, useContext } from 'react'
+import { /* useParams, */ Link, useHistory } from 'react-router-dom'
+import AuthContext from '../contexts/AuthContext'
 import UserAPI from '../fetch/UserAPI'
 import { Button, TextField, Box, Typography } from '@material-ui/core'
 
-const Log = () => {
+const Login = () => {
+      const history = useHistory()
+      const { setIsAuthenticated } = useContext(AuthContext)
+
       const [credentials, setCredentials] = useState({
             identifier: '',
             password: '',
@@ -25,6 +29,8 @@ const Log = () => {
 
             try {
                   await UserAPI.login(credentials)
+                  setIsAuthenticated(true)
+                  history.replace('admin')
             } catch (error) {
                   console.log(error)
             }
@@ -40,8 +46,7 @@ const Log = () => {
                         alignItems: 'center',
                   }}
             >
-                  <h2>S'identifier</h2>
-
+                  <h2 style={{ marginTop: 80 }}>S'identifier</h2>
                   <form onSubmit={handleSubmit}>
                         <TextField
                               onChange={handleChange}
@@ -103,19 +108,4 @@ const Log = () => {
             </Box>
       )
 }
-export default Log
-
-/* 
-import RegisterForm from '../components/RegisterForm'
-import LoginForm from '../components/LoginForm'
-export default function Log() {
-      return (
-            <div className="Log">
-                  <h2>S'enregistrer</h2>
-                  <RegisterForm />
-                  <h2>Se connecter</h2>
-                  <LoginForm />
-            </div>
-      )
-}
- */
+export default Login

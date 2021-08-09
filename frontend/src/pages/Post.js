@@ -54,7 +54,7 @@ export default function Post() {
                                     {isLoading ? (
                                           <img
                                                 style={{ width: '100%' }}
-                                                alt="post"
+                                                alt={postState.title}
                                                 src={
                                                       API_URL +
                                                       postState.image.formats
