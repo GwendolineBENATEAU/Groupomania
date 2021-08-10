@@ -1,7 +1,6 @@
 import React from 'react'
 import { API_URL } from '../config'
 import { Link } from 'react-router-dom'
-
 import {
       makeStyles,
       Avatar,
@@ -16,14 +15,13 @@ import {
       CardContent,
       CardActions,
 } from '@material-ui/core'
-import { indigo, red } from '@material-ui/core/colors'
 import MoreVertIcon from '@material-ui/icons/MoreVert'
 import PermIdentityIcon from '@material-ui/icons/PermIdentity'
 import FavoriteIcon from '@material-ui/icons/Favorite'
 import ShareIcon from '@material-ui/icons/Share'
 import ChatIcon from '@material-ui/icons/Chat'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
       root: {
             maxWidth: '100%',
             marginBottom: 30,
@@ -33,10 +31,10 @@ const useStyles = makeStyles((theme) => ({
             paddingTop: '56.25%', // 16:9
       },
       avatar: {
-            backgroundColor: red[500],
+            backgroundColor: '#3F51b5',
       },
       chatIcon: {
-            color: indigo[500],
+            color: '#3F51b5',
       },
 }))
 
@@ -96,10 +94,7 @@ export default function CardPosts({ post }) {
                                                 paddingRight: 10,
                                           }}
                                     />
-                                    <Typography
-                                          variant="body2"
-                                          color="indigo[500]"
-                                    >
+                                    <Typography variant="body2" color="primary">
                                           Afficher les commentaires{' '}
                                     </Typography>
                               </IconButton>

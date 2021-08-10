@@ -15,11 +15,14 @@ function findComments(id) {
             .then((res) => res.data)
 }
 
+function create(message) {
+      return axios.post(`${API_URL}/messages`, message)
+}
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
       findAll,
       findOne,
       findComments,
+      create,
 }
-
-//URL_POST = API_URL + /messages

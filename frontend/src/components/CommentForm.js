@@ -7,10 +7,9 @@ const CommentForm = (props) => {
       const [comment, setComment] = useState({})
 
       const handleSubmit = async () => {
-            console.log(comment)
             try {
-                  const data = CommentAPI.create(comment)
-                  console.log(data)
+                  await CommentAPI.create(comment)
+
                   props.fetchAllComments()
             } catch (error) {
                   console.log(error)
@@ -18,11 +17,8 @@ const CommentForm = (props) => {
       }
 
       const handleChange = ({ currentTarget }) => {
-            //const name = currentTarget.name
-            //const value = currentTarget.value
             const { name, value } = currentTarget
             setComment({
-                  //prend l'ancienne valeur du champ et rajoute à la suite les autres valeurs
                   ...comment,
                   message: props.id,
                   [name]: value,

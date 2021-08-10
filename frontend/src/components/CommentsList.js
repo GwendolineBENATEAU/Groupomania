@@ -7,7 +7,6 @@ import {
       ListItemText,
       ListItemAvatar,
       Avatar,
-      Divider,
       Typography,
 } from '@material-ui/core'
 
@@ -24,7 +23,6 @@ export default function CommentsList() {
             try {
                   const data = await MessageAPI.findComments(id)
                   setComments(data)
-                  console.log(data)
             } catch (error) {
                   console.log(error)
             }
@@ -72,7 +70,6 @@ export default function CommentsList() {
                               </ListItem>
                         ))
                         .reverse()}
-                  <Divider variant="inset" component="li" />
             </List>
       )
 }

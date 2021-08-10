@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { /* useParams, */ Link, useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import AuthContext from '../contexts/AuthContext'
 import UserAPI from '../fetch/UserAPI'
 import { Button, TextField, Box, Typography } from '@material-ui/core'
@@ -30,7 +30,7 @@ const Login = () => {
             try {
                   await UserAPI.login(credentials)
                   setIsAuthenticated(true)
-                  history.replace('admin')
+                  history.replace('form')
             } catch (error) {
                   console.log(error)
             }
@@ -61,10 +61,6 @@ const Login = () => {
                               fullWidth
                               margin="normal"
                               variant="outlined"
-                              /* error={Boolean(touched.email && errors.email)}
-                        helperText={touched.email && errors.email}
-                        onBlur={handleBlur}
-                        value={values.email} */
                         />
                         <TextField
                               onChange={handleChange}
@@ -79,10 +75,6 @@ const Login = () => {
                               fullWidth
                               margin="normal"
                               variant="outlined"
-                              /* error={Boolean(touched.password && errors.password)}
-                        helperText={touched.password && errors.password}
-                        onBlur={handleBlur}
-                        value={values.password} */
                         />
 
                         <Button
@@ -92,7 +84,6 @@ const Login = () => {
                               fullWidth
                               size="large"
                               style={{ marginTop: 30 }}
-                              /* disabled={isSubmitting} */
                         >
                               Connexion
                         </Button>

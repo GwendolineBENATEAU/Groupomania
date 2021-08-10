@@ -4,11 +4,10 @@ import { API_URL } from '../config'
 import MessageAPI from '../fetch/MessageAPI'
 import CommentForm from '../components/CommentForm'
 import CommentsList from '../components/CommentsList'
-
 import { Grid, Button } from '@material-ui/core'
 import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
-export default function Post() {
+export default function PostPage() {
       const { id } = useParams()
       const [postState, setPost] = useState(null)
       const [isLoading, setIsLoading] = useState(false)
@@ -25,7 +24,7 @@ export default function Post() {
       }
 
       return (
-            <div className="post">
+            <div>
                   <nav
                         style={{
                               paddingBottom: 20,
@@ -46,28 +45,27 @@ export default function Post() {
 
                   <Grid container spacing={2}>
                         <Grid item xs={12}>
-                              <div
-                                    style={{
-                                          marginTop: 20,
-                                    }}
-                              >
-                                    {isLoading ? (
-                                          <img
-                                                style={{ width: '100%' }}
-                                                alt={postState.title}
-                                                src={
-                                                      API_URL +
-                                                      postState.image.formats
-                                                            .medium.url
-                                                }
-                                          />
-                                    ) : (
-                                          'Loading...'
-                                    )}
-                              </div>
                               <h2>{isLoading ? postState.title : ''}</h2>
                               <p>{isLoading ? postState.content : ''}</p>
+                              {isLoading ? (
+                                    <img
+                                          style={{
+                                                width: '100%',
+                                                marginTop: 30,
+                                          }}
+                                          alt={postState.title}
+                                          src={
+                                                API_URL +
+                                                postState.image.formats.medium
+                                                      .url
+                                          }
+                                    />
+                              ) : (
+                                    'Loading...'
+                              )}
+
                               <h2 style={{ marginTop: 80 }}>Réagissez !</h2>
+
                               <CommentForm id={id} />
                               <CommentsList />
                         </Grid>

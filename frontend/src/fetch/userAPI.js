@@ -10,7 +10,6 @@ function login(credentials) {
                   window.localStorage.setItem('jwtToken', data.jwt)
                   window.localStorage.setItem('username', data.user.username)
                   axios.defaults.headers['Authorization'] = 'Bearer ' + data.jwt
-                  console.log(isAuthenticated())
             })
 }
 

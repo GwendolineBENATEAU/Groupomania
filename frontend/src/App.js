@@ -11,9 +11,9 @@ import UserAPI from './fetch/UserAPI'
 import NavBar from './components/NavBar'
 
 import Login from './pages/Login'
-import Wall from './pages/Wall'
-import Post from './pages/Post'
-import AdminPostsPage from './pages/AdminPostsPage'
+import WallPage from './pages/WallPage'
+import PostPage from './pages/PostPage'
+import PostsForm from './pages/PostsForm'
 
 import Container from '@material-ui/core/Container'
 
@@ -26,41 +26,39 @@ export default function App() {
             <AuthContext.Provider
                   value={{ isAuthenticated, setIsAuthenticated }}
             >
-                  <Container>
-                        <div className="App">
-                              <Router>
-                                    <NavBar />
-                                    <Switch>
-                                          <Route
-                                                path="/"
-                                                exact
-                                                component={Wall}
-                                          ></Route>
-                                          <Route
-                                                path="/login"
-                                                exact
-                                                component={Login}
-                                          ></Route>
-                                          <PrivateRoute
-                                                path="/admin"
-                                                exact
-                                                component={AdminPostsPage}
-                                          />
-                                          <Route
-                                                path="/wall"
-                                                exact
-                                                component={Wall}
-                                          />
-                                          <Route
-                                                path="/post/:id"
-                                                exact
-                                                component={Post}
-                                          />
-                                          <Redirect to="/" />
-                                    </Switch>
-                              </Router>
-                        </div>
-                  </Container>
+                  <Router>
+                        <NavBar />
+                        <Container>
+                              <Switch>
+                                    <Route
+                                          path="/"
+                                          exact
+                                          component={WallPage}
+                                    ></Route>
+                                    <Route
+                                          path="/login"
+                                          exact
+                                          component={Login}
+                                    ></Route>
+                                    <PrivateRoute
+                                          path="/form"
+                                          exact
+                                          component={PostsForm}
+                                    />
+                                    <Route
+                                          path="/wall"
+                                          exact
+                                          component={WallPage}
+                                    />
+                                    <Route
+                                          path="/post/:id"
+                                          exact
+                                          component={PostPage}
+                                    />
+                                    <Redirect to="/" />
+                              </Switch>
+                        </Container>
+                  </Router>
             </AuthContext.Provider>
       )
 }

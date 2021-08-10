@@ -15,5 +15,3 @@ export default {
       create,
       findAll,
 }
-
-//URL_COMMENTS = API_URL + /comments
