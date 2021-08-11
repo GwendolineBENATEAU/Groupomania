@@ -38,6 +38,7 @@ const PostsForm = () => {
                   }}
             >
                   <h2>Créer une publication</h2>
+                  <UploadFile />
 
                   <form
                         onSubmit={handleSubmit}
@@ -76,7 +77,6 @@ const PostsForm = () => {
                               }}
                               variant="outlined"
                         />
-                        <UploadFile />
 
                         <Button
                               type="submit"
