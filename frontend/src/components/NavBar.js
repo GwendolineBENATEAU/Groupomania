@@ -46,7 +46,7 @@ const NavBar = () => {
                               alignItems: 'center',
                         }}
                   >
-                        <Link to="/">
+                        <Link to="/" title="home">
                               <IconButton
                                     aria-label="home"
                                     style={{ padding: 10 }}
@@ -61,7 +61,7 @@ const NavBar = () => {
                         </Link>
 
                         {isAuthenticated && (
-                              <Link to="/form">
+                              <Link to="/form" title="add post">
                                     <IconButton
                                           aria-label="add post"
                                           style={{ padding: 10 }}
@@ -76,7 +76,10 @@ const NavBar = () => {
                               </Link>
                         )}
                         {isAuthenticated && (
-                              <a href="http://localhost:1337/admin/auth/login">
+                              <a
+                                    href="http://localhost:1337/admin/auth/login"
+                                    title="moderate"
+                              >
                                     <IconButton
                                           aria-label="moderate"
                                           style={{ padding: 10 }}
@@ -92,7 +95,7 @@ const NavBar = () => {
                         )}
 
                         {!isAuthenticated && (
-                              <Link to="/login">
+                              <Link to="/login" title="login">
                                     <IconButton
                                           aria-label="login"
                                           style={{ padding: 10 }}
@@ -107,7 +110,11 @@ const NavBar = () => {
                               </Link>
                         )}
                         {isAuthenticated && (
-                              <Link to="/" onClick={handleDisconnect}>
+                              <Link
+                                    to="/"
+                                    onClick={handleDisconnect}
+                                    title="logout"
+                              >
                                     <IconButton
                                           aria-label="logout"
                                           style={{ padding: 10 }}

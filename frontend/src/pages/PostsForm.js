@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import MessageAPI from '../fetch/MessageAPI'
+import UploadFile from '../components/UploadFile'
 import { Button, TextField } from '@material-ui/core'
 import SendOutlinedIcon from '@material-ui/icons/SendOutlined'
-import axios from 'axios'
 
 const PostsForm = () => {
       const history = useHistory()
@@ -17,8 +17,6 @@ const PostsForm = () => {
             setCredentials({
                   ...credentials,
                   [name]: value,
-                  ////////////////////////
-                  image: currentTarget.files,
             })
       }
       const handleSubmit = async (event) => {
@@ -26,22 +24,9 @@ const PostsForm = () => {
 
             console.log(credentials)
 
-            //////////////////////////////////
-            const data = new FormData()
-            data.append('files', credentials)
-            /////////////////////////
-
             try {
                   await MessageAPI.create(credentials)
                   history.replace('/')
-                  ///////////////////////////////
-                  const upload = await axios({
-                        method: 'POST',
-                        url: 'http://localhost:1337/upload',
-                        data,
-                  })
-                  console.log('fileUpload.hadleSubmit', upload)
-                  /////////////////////////////
             } catch (error) {
                   console.log(error)
             }
@@ -92,15 +77,7 @@ const PostsForm = () => {
                               }}
                               variant="outlined"
                         />
-
-                        <input
-                              onChange={handleChange}
-                              id="image"
-                              name="image"
-                              type="file"
-                              accept="image/*"
-                              style={{ marginTop: 30 }}
-                        />
+                        <UploadFile />
 
                         <Button
                               type="submit"
