@@ -9,7 +9,6 @@ const CommentForm = (props) => {
       const handleSubmit = async () => {
             try {
                   await CommentAPI.create(comment)
-
                   props.fetchAllComments()
             } catch (error) {
                   console.log(error)

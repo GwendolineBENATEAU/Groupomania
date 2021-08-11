@@ -14,11 +14,15 @@ export default function WallPage() {
 
       //utilisation de async await pour éviter les .then imbriqués
       const fetchAllPosts = async () => {
-            const data = await MessageAPI.findAll()
-            setTimeout(() => {
-                  setPosts(data)
-                  setIsLoading(false)
-            }, 3000)
+            try {
+                  const data = await MessageAPI.findAll()
+                  setTimeout(() => {
+                        setPosts(data)
+                        setIsLoading(false)
+                  }, 2000)
+            } catch (error) {
+                  console.log(error)
+            }
       }
 
       return (

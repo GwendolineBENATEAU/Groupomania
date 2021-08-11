@@ -7,11 +7,21 @@ import { Button, TextField, Box, Typography } from '@material-ui/core'
 const Login = () => {
       const history = useHistory()
       const { setIsAuthenticated } = useContext(AuthContext)
-
       const [credentials, setCredentials] = useState({
             identifier: '',
             password: '',
       })
+
+      const handleSubmit = async (event) => {
+            event.preventDefault()
+            try {
+                  await UserAPI.login(credentials)
+                  setIsAuthenticated(true)
+                  history.replace('form')
+            } catch (error) {
+                  console.log(error)
+            }
+      }
 
       const handleChange = ({ currentTarget }) => {
             //const name = currentTarget.name
@@ -22,18 +32,6 @@ const Login = () => {
                   ...credentials,
                   [name]: value,
             })
-      }
-
-      const handleSubmit = async (event) => {
-            event.preventDefault()
-
-            try {
-                  await UserAPI.login(credentials)
-                  setIsAuthenticated(true)
-                  history.replace('form')
-            } catch (error) {
-                  console.log(error)
-            }
       }
 
       return (

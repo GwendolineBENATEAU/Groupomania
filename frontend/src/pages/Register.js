@@ -7,24 +7,14 @@ import { Button, TextField, Box, Typography } from '@material-ui/core'
 const Login = () => {
       const history = useHistory()
       const { setIsAuthenticated } = useContext(AuthContext)
-
       const [credentials, setCredentials] = useState({
             username: '',
             email: '',
             password: '',
       })
 
-      const handleChange = ({ currentTarget }) => {
-            const { name, value } = currentTarget
-            setCredentials({
-                  ...credentials,
-                  [name]: value,
-            })
-      }
-
       const handleSubmit = async (event) => {
             event.preventDefault()
-
             try {
                   await UserAPI.register(credentials)
                   setIsAuthenticated(true)
@@ -32,6 +22,14 @@ const Login = () => {
             } catch (error) {
                   console.log(error)
             }
+      }
+
+      const handleChange = ({ currentTarget }) => {
+            const { name, value } = currentTarget
+            setCredentials({
+                  ...credentials,
+                  [name]: value,
+            })
       }
 
       return (

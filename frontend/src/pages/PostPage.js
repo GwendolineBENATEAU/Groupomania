@@ -18,9 +18,13 @@ export default function PostPage() {
       }, [])
 
       const fetchOnePost = async () => {
-            const data = await MessageAPI.findOne(id)
-            setPost(data)
-            setIsLoading(true)
+            try {
+                  const data = await MessageAPI.findOne(id)
+                  setPost(data)
+                  setIsLoading(true)
+            } catch (error) {
+                  console.log(error)
+            }
       }
 
       return (

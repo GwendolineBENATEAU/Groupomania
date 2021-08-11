@@ -12,24 +12,23 @@ const PostsForm = () => {
             content: '',
             image: '',
       })
-      const handleChange = ({ currentTarget }) => {
-            const { name, value } = currentTarget
-            setCredentials({
-                  ...credentials,
-                  [name]: value,
-            })
-      }
+
       const handleSubmit = async (event) => {
             event.preventDefault()
-
-            console.log(credentials)
-
             try {
                   await MessageAPI.create(credentials)
                   history.replace('/')
             } catch (error) {
                   console.log(error)
             }
+      }
+
+      const handleChange = ({ currentTarget }) => {
+            const { name, value } = currentTarget
+            setCredentials({
+                  ...credentials,
+                  [name]: value,
+            })
       }
 
       return (
