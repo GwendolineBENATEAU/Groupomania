@@ -19,7 +19,6 @@ function UploadFile() {
                   .then((response) => {
                         const imageId = response.data[0].id
                         console.log(imageId)
-                        console.log(JSON.stringify(response.data))
 
                         /* axios.post('http://localhost:1337/message', {
                               image: imageId,
@@ -30,7 +29,7 @@ function UploadFile() {
                               })
                               .catch((error) => {
                                     console.log(error)
-                              })*/
+                              }) */
                   })
                   .catch((error) => {
                         console.log(error)
