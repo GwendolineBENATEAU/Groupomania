@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import AuthContext from '../contexts/AuthContext'
 import UserAPI from '../fetch/UserAPI'
 import { Button, TextField, Box, Typography } from '@material-ui/core'
@@ -9,16 +9,14 @@ const Login = () => {
       const { setIsAuthenticated } = useContext(AuthContext)
 
       const [credentials, setCredentials] = useState({
-            identifier: '',
+            username: '',
+            email: '',
             password: '',
       })
 
       const handleChange = ({ currentTarget }) => {
-            //const name = currentTarget.name
-            //const value = currentTarget.value
             const { name, value } = currentTarget
             setCredentials({
-                  //prend l'ancienne valeur du champ et rajoute à la suite les autres valeurs
                   ...credentials,
                   [name]: value,
             })
@@ -28,7 +26,7 @@ const Login = () => {
             event.preventDefault()
 
             try {
-                  await UserAPI.login(credentials)
+                  await UserAPI.register(credentials)
                   setIsAuthenticated(true)
                   history.replace('form')
             } catch (error) {
@@ -46,12 +44,26 @@ const Login = () => {
                         alignItems: 'center',
                   }}
             >
-                  <h2 style={{ marginTop: 80 }}>Connectez-vous</h2>
+                  <h2 style={{ marginTop: 80 }}>Créer un compte</h2>
                   <form onSubmit={handleSubmit}>
                         <TextField
                               onChange={handleChange}
-                              id="identifier"
-                              name="identifier"
+                              id="username"
+                              name="username"
+                              label="Prénom"
+                              type="text"
+                              placeholder="votre prénom"
+                              InputLabelProps={{
+                                    shrink: true,
+                              }}
+                              fullWidth
+                              margin="normal"
+                              variant="outlined"
+                        />
+                        <TextField
+                              onChange={handleChange}
+                              id="email"
+                              name="email"
                               label="Adresse email"
                               type="email"
                               placeholder="prenom.nom@groupomania.com"
@@ -85,7 +97,7 @@ const Login = () => {
                               size="large"
                               style={{ marginTop: 30 }}
                         >
-                              Connexion
+                              Inscription
                         </Button>
 
                         <Typography
@@ -95,8 +107,9 @@ const Login = () => {
                                     color: 'rgba(0, 0, 0, 0.54)',
                               }}
                         >
-                              Vous n'avez pas encore de compte ?
-                              <Link to="/register"> Inscrivez-vous</Link>
+                              En cliquant sur inscription, vous acceptez les
+                              Conditions Générales d'Utilisation internes à
+                              l'entreprise Groupomania.
                         </Typography>
                   </form>
             </Box>

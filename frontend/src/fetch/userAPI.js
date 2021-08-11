@@ -13,6 +13,17 @@ function login(credentials) {
             })
 }
 
+function register(credentials) {
+      return axios
+            .post(`${API_URL}/auth/local/register`, credentials)
+            .then((res) => res.data)
+            .then((data) => {
+                  window.localStorage.setItem('jwtToken', data.jwt)
+                  window.localStorage.setItem('username', data.user.username)
+                  axios.defaults.headers['Authorization'] = 'Bearer ' + data.jwt
+            })
+}
+
 function isAuthenticated() {
       const searchToken = window.localStorage.getItem('jwtToken')
       if (searchToken) {
@@ -34,6 +45,7 @@ function logout() {
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
       login,
+      register,
       isAuthenticated,
       logout,
 }

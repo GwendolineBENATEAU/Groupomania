@@ -11,6 +11,7 @@ import UserAPI from './fetch/UserAPI'
 import NavBar from './components/NavBar'
 
 import Login from './pages/Login'
+import Register from './pages/Register'
 import WallPage from './pages/WallPage'
 import PostPage from './pages/PostPage'
 import PostsForm from './pages/PostsForm'
@@ -40,6 +41,12 @@ export default function App() {
                                           exact
                                           component={Login}
                                     ></Route>
+                                    <Route
+                                          path="/register"
+                                          exact
+                                          component={Register}
+                                    ></Route>
+
                                     <PrivateRoute
                                           path="/form"
                                           exact

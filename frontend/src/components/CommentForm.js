@@ -31,9 +31,9 @@ const CommentForm = (props) => {
                         onChange={handleChange}
                         id="pseudo"
                         name="pseudo"
-                        label="Pseudo"
+                        label="Prénom"
                         type="text"
-                        placeholder="Renseignez votre nom …"
+                        placeholder="Renseignez votre prénom"
                         margin="normal"
                         InputLabelProps={{
                               shrink: true,
