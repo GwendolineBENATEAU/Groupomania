@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import axios from 'axios'
+import MessageAPI from '../fetch/MessageAPI'
 
 function UploadFile() {
       const [files, setFiles] = useState({
@@ -15,14 +15,12 @@ function UploadFile() {
             //ajout files[0] au formData appelé files
             formData.append('files', files[0])
 
-            axios.post('http://localhost:1337/upload', formData)
-                  .then((response) => {
-                        const imageId = response.data[0].id
-                        console.log(imageId)
-                  })
-                  .catch((error) => {
-                        console.log(error)
-                  })
+            //appel sur l'API pour la route upload
+            try {
+                  await MessageAPI.upload(formData)
+            } catch (error) {
+                  console.log(error)
+            }
       }
 
       return (

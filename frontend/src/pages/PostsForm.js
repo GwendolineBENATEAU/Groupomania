@@ -10,27 +10,13 @@ const PostsForm = () => {
       const [credentials, setCredentials] = useState({
             title: '',
             content: '',
-            image: {
-                  id: 18,
-            },
+            image: '',
       })
 
       const handleSubmit = async (event) => {
             event.preventDefault()
             try {
                   await MessageAPI.create(credentials)
-
-                  /* axios.post('http://localhost:1337/message', {
-                              image: imageId,
-                        })
-                              .then((res) => {
-                                    console.log(res)
-                                    console.log(res.data)
-                              })
-                              .catch((error) => {
-                                    console.log(error)
-                              }) */
-
                   history.replace('/')
             } catch (error) {
                   console.log(error)
@@ -41,6 +27,7 @@ const PostsForm = () => {
             const { name, value } = currentTarget
             setCredentials({
                   ...credentials,
+                  // image: '', //image: imageId//{ id: 18 },
                   [name]: value,
             })
       }
