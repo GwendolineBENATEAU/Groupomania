@@ -22,8 +22,7 @@ function create(message) {
 function upload(formData) {
       return axios.post(`${API_URL}/upload`, formData).then((res) => {
             const imageId = res.data[0].id
-            console.log(imageId) //18
-            return imageId
+            return window.localStorage.setItem('idImage', imageId)
       })
 }
 

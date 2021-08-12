@@ -58,11 +58,7 @@ export default function PostPage() {
                                                 marginTop: 30,
                                           }}
                                           alt={postState.title}
-                                          src={
-                                                API_URL +
-                                                postState.image.formats.medium
-                                                      .url
-                                          }
+                                          src={API_URL + postState.image.url}
                                     />
                               ) : (
                                     'Loading...'

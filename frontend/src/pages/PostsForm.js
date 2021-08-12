@@ -18,6 +18,7 @@ const PostsForm = () => {
             try {
                   await MessageAPI.create(credentials)
                   history.replace('/')
+                  window.localStorage.removeItem('idImage')
             } catch (error) {
                   console.log(error)
             }
@@ -25,9 +26,11 @@ const PostsForm = () => {
 
       const handleChange = ({ currentTarget }) => {
             const { name, value } = currentTarget
+            const imageId = window.localStorage.getItem('idImage')
+
             setCredentials({
                   ...credentials,
-                  // image: '', //image: imageId//{ id: 18 },
+                  image: { id: imageId },
                   [name]: value,
             })
       }

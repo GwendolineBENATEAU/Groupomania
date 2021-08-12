@@ -31,17 +31,12 @@
         "images"
       ],
       "plugin": "upload",
-      "required": false,
+      "required": true,
       "pluginOptions": {}
     },
     "comments": {
       "via": "message",
       "collection": "comment"
-    },
-    "users_permissions_user": {
-      "plugin": "users-permissions",
-      "model": "user",
-      "via": "messages"
     }
   }
 }

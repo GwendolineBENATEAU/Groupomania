@@ -65,7 +65,7 @@ export default function CardPosts({ post }) {
                         className={classes.media}
                         image={
                               post.image !== null
-                                    ? API_URL + post.image.formats.medium.url
+                                    ? API_URL + post.image.url
                                     : '...'
                         }
                         title={post.title}
@@ -73,7 +73,7 @@ export default function CardPosts({ post }) {
 
                   <CardContent>
                         <Typography variant="body2" color="textSecondary">
-                              {post.content && post.content.substring(0, 600)}
+                              {post.content && post.content.substring(0, 300)}
                               <Link to={`/post/${post.id}`}>
                                     {' '}
                                     ... Lire la suite

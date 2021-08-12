@@ -76,8 +76,10 @@ const NavBar = () => {
                               </Link>
                         )}
                         {isAuthenticated && (
+                              // eslint-disable-next-line react/jsx-no-target-blank
                               <a
                                     href="http://localhost:1337/admin/auth/login"
+                                    target="_blank"
                                     title="moderate"
                               >
                                     <IconButton

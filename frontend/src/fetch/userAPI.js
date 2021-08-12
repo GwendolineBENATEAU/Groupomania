@@ -39,6 +39,7 @@ function isAuthenticated() {
 function logout() {
       window.localStorage.removeItem('jwtToken')
       window.localStorage.removeItem('username')
+      window.localStorage.removeItem('idImage')
       delete axios.defaults.headers['Authorization']
 }
 

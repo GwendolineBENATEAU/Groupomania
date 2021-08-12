@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import MessageAPI from '../fetch/MessageAPI'
+import { Card } from '@material-ui/core'
 
 function UploadFile() {
       const [files, setFiles] = useState({
@@ -24,18 +25,34 @@ function UploadFile() {
       }
 
       return (
-            <form onSubmit={uploadImage}>
-                  <input
-                        id="image"
-                        name="image"
-                        type="file"
-                        label="Image"
-                        accept="image/*"
-                        onChange={(e) => setFiles(e.target.files)}
-                        style={{ margin: 50 }}
-                  />
-                  <input type="submit" value="Submit" />
-            </form>
+            <Card
+                  style={{
+                        marginTop: 40,
+                        marginBottom: 10,
+                        padding: 20,
+                        backgroundColor: '#ebe9e9',
+                        borderColor: '#bfbdbd',
+                        borderStyle: 'solid',
+                        borderWidth: 1.5,
+                        boxShadow: 'none',
+                  }}
+            >
+                  <form onSubmit={uploadImage}>
+                        <input
+                              id="image"
+                              name="image"
+                              type="file"
+                              label="Image"
+                              accept="image/*"
+                              onChange={(e) => setFiles(e.target.files)}
+                        />
+                        <input
+                              type="submit"
+                              value="Lancer le télécharger"
+                              label="Image"
+                        />
+                  </form>
+            </Card>
       )
 }
 
