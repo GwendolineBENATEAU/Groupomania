@@ -27,7 +27,6 @@ function UploadFile() {
       return (
             <Card
                   style={{
-                        marginTop: 40,
                         marginBottom: 10,
                         padding: 20,
                         backgroundColor: '#ebe9e9',
@@ -37,8 +36,13 @@ function UploadFile() {
                         boxShadow: 'none',
                   }}
             >
-                  <form onSubmit={uploadImage}>
+                  <form
+                        onSubmit={uploadImage}
+                        required
+                        label="Ajouter une image"
+                  >
                         <input
+                              required
                               id="image"
                               name="image"
                               type="file"
@@ -47,6 +51,7 @@ function UploadFile() {
                               onChange={(e) => setFiles(e.target.files)}
                         />
                         <input
+                              required
                               type="submit"
                               value="Lancer le télécharger"
                               label="Image"

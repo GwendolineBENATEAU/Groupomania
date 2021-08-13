@@ -42,8 +42,18 @@ const PostsForm = () => {
                   }}
             >
                   <h2>Créer une publication</h2>
-                  <UploadFile />
 
+                  <legend
+                        style={{
+                              marginTop: 40,
+                              fontSize: '0.8em',
+                              color: '#737373',
+                              fontWeight: 500,
+                        }}
+                  >
+                        Ajouter une image *
+                  </legend>
+                  <UploadFile />
                   <form
                         onSubmit={handleSubmit}
                         style={{
@@ -52,6 +62,7 @@ const PostsForm = () => {
                         }}
                   >
                         <TextField
+                              required
                               onChange={handleChange}
                               id="title"
                               name="title"
@@ -67,6 +78,7 @@ const PostsForm = () => {
                               variant="outlined"
                         />
                         <TextField
+                              required
                               onChange={handleChange}
                               id="content"
                               name="content"
