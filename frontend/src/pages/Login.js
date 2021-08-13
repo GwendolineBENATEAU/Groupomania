@@ -47,6 +47,7 @@ const Login = () => {
                   <h2 style={{ marginTop: 80 }}>Connectez-vous</h2>
                   <form onSubmit={handleSubmit}>
                         <TextField
+                              required
                               onChange={handleChange}
                               id="identifier"
                               name="identifier"
@@ -61,6 +62,7 @@ const Login = () => {
                               variant="outlined"
                         />
                         <TextField
+                              required
                               onChange={handleChange}
                               id="password"
                               name="password"

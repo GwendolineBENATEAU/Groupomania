@@ -5,7 +5,7 @@ import UserAPI from '../fetch/UserAPI'
 import Logo from '../logo-groupomania.svg'
 import IconButton from '@material-ui/core/IconButton'
 import HomeIcon from '@material-ui/icons/Home'
-import AddCircleIcon from '@material-ui/icons/AddCircle'
+import PostAddIcon from '@material-ui/icons/PostAdd'
 import ExitToAppIcon from '@material-ui/icons/ExitToApp'
 import LockOpenIcon from '@material-ui/icons/LockOpen'
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount'
@@ -66,10 +66,10 @@ const NavBar = () => {
                                           aria-label="add post"
                                           style={{ padding: 10 }}
                                     >
-                                          <AddCircleIcon
+                                          <PostAddIcon
                                                 style={{
                                                       color: '#FFF',
-                                                      fontSize: '1.5rem',
+                                                      fontSize: '1.6rem',
                                                 }}
                                           />
                                     </IconButton>

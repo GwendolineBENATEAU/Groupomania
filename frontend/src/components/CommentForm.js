@@ -27,6 +27,7 @@ const CommentForm = (props) => {
       return (
             <form onSubmit={handleSubmit}>
                   <TextField
+                        required
                         onChange={handleChange}
                         id="pseudo"
                         name="pseudo"
@@ -40,6 +41,7 @@ const CommentForm = (props) => {
                         variant="outlined"
                   />
                   <TextField
+                        required
                         onChange={handleChange}
                         id="content"
                         name="content"
