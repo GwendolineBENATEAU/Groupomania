@@ -46,9 +46,9 @@ const NavBar = () => {
                               alignItems: 'center',
                         }}
                   >
-                        <Link to="/" title="home">
+                        <Link to="/" title="Page principale">
                               <IconButton
-                                    aria-label="home"
+                                    aria-label="Page principale"
                                     style={{ padding: 10 }}
                               >
                                     <HomeIcon
@@ -61,9 +61,9 @@ const NavBar = () => {
                         </Link>
 
                         {isAuthenticated && (
-                              <Link to="/form" title="add post">
+                              <Link to="/form" title="Créer une publication">
                                     <IconButton
-                                          aria-label="add post"
+                                          aria-label="Créer une publication"
                                           style={{ padding: 10 }}
                                     >
                                           <PostAddIcon
@@ -80,10 +80,10 @@ const NavBar = () => {
                               <a
                                     href="http://localhost:1337/admin/auth/login"
                                     target="_blank"
-                                    title="moderate"
+                                    title="Accès à l'espace de modération"
                               >
                                     <IconButton
-                                          aria-label="moderate"
+                                          aria-label="Accès à l'espace de modération"
                                           style={{ padding: 10 }}
                                     >
                                           <SupervisorAccountIcon
@@ -97,9 +97,9 @@ const NavBar = () => {
                         )}
 
                         {!isAuthenticated && (
-                              <Link to="/login" title="login">
+                              <Link to="/login" title="Se connecter">
                                     <IconButton
-                                          aria-label="login"
+                                          aria-label="Se connecter"
                                           style={{ padding: 10 }}
                                     >
                                           <LockOpenIcon
@@ -115,10 +115,10 @@ const NavBar = () => {
                               <Link
                                     to="/"
                                     onClick={handleDisconnect}
-                                    title="logout"
+                                    title="Se déconnecter"
                               >
                                     <IconButton
-                                          aria-label="logout"
+                                          aria-label="Se déconnecter"
                                           style={{ padding: 10 }}
                                     >
                                           <ExitToAppIcon
