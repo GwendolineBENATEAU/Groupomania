@@ -1,4 +1,4 @@
-![Groupomania]()
+![Groupomania](https://github.com/GwendolineBENATEAU/GwendolineBenateau_7_3107021_Groupomania/blob/master/docs/Groupomania_Pr%C3%A9sentation_P7.jpg)
 
 
 # Groupomania 
