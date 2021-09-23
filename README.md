@@ -55,7 +55,7 @@ Réalisation d'un MVP pour un réseau social d'entreprise, en Javascript avec fr
 - Standards d'accessibilité WCAG
 - Standards de sécurité OWASP et règlementation RGPD
 
-###### _* Aucune contre-indication à utiliser cet outil dans le périmètre du projet_
+[^1]: * Aucune contre-indication à utiliser cet outil dans le périmètre du projet_
 
 ## Présentation du projet
 - Diaporama de présentation du projet [Groupomania](https://www.canva.com/design/DAEm-sMwB68/ohdK53m7EVoQ3zw5m3SckQ/view?utm_content=DAEm-sMwB68&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
