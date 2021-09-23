@@ -114,5 +114,6 @@ exports
 build
 .strapi-updater.json
 readme.md
+.editorconfig
 .eslintrc
 .eslintignore
