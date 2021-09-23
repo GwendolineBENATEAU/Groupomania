@@ -6,10 +6,10 @@ Groupomania est le 7e projet fictif à caractère pédagique de la formation de 
 
 ## Description du projet
 ### Scénario
-Le projet consiste à construire un réseau social interne pour les employés de Groupomania (clients de Connect-E), un groupe spécialisé dans la grande distribution. Le but de cet outil est de faciliter les interactions entre collègues. Le département RH de Groupomania a laissé libre cours à son imagination mais a toutefois réfléchi aux fonctionnalités à intégrer dans le produit... ([lire la suite](https://github.com/GwendolineBENATEAU/GwendolineBenateau_7_3107021_Groupomania/blob/master/docs/Groupomania_Perimetre_DWJ_OC.pdf))
+Le projet consiste à construire un réseau social interne pour les employés de Groupomania, un groupe spécialisé dans la grande distribution (clients de Connect-E). Le but de cet outil est de faciliter les interactions entre collègues. Le département RH de Groupomania a laissé libre cours à son imagination mais a toutefois réfléchi aux fonctionnalités à intégrer dans le produit... ([lire la suite](https://github.com/GwendolineBENATEAU/GwendolineBenateau_7_3107021_Groupomania/blob/master/docs/Groupomania_Perimetre_DWJ_OC.pdf))
 
 ### Documentation 
-[Spécifications fonctionnelles](https://github.com/GwendolineBENATEAU/GwendolineBenateau_7_3107021_Groupomania/blob/master/docs/Groupomania_Specs_FR_DWJ_VF.pdf)
+[Spécifications fonctionnelles](https://github.com/GwendolineBENATEAU/GwendolineBenateau_7_3107021_Groupomania/blob/master/docs/Groupomania_Specs_DWJ_OC.pdf)
 
 
 ### Objectif
@@ -55,7 +55,7 @@ Réalisation d'un MVP pour un réseau social d'entreprise, en Javascript avec fr
 - Standards d'accessibilité WCAG
 - Standards de sécurité OWASP et règlementation RGPD
 
-###### Aucune contre-indication à utiliser cet outil dans le périmètre du projet
+###### _* Aucune contre-indication à utiliser cet outil dans le périmètre du projet_
 
 ## Présentation du projet
 - Diaporama de présentation du projet [Groupomania](https://www.canva.com/design/DAEm-sMwB68/ohdK53m7EVoQ3zw5m3SckQ/view?utm_content=DAEm-sMwB68&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
