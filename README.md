@@ -13,7 +13,7 @@ Le projet consiste à construire un réseau social interne pour les employés de
 
 
 ### Objectif
-Réalisation d'un MVP pour un réseau social d'entreprise, en Javascript avec framework Front-End de son choix (React, Vue, Angular, Ember, Meteor, Aurelia...) sauf framework Symfony, connecté à une base de données relationnelles qui se manipule avec le langage SQL et dans le respect des standards WCAG.
+Réalisation d'un MVP pour un réseau social d'entreprise, en Javascript, avec framework Front-End de son choix (React, Vue, Angular, Ember, Meteor, Aurelia...) sauf framework Symfony, connecté à une base de données relationnelles qui se manipule avec le langage SQL et dans le respect des standards WCAG.
 
 
 ### Compétences évaluées
@@ -25,21 +25,23 @@ Réalisation d'un MVP pour un réseau social d'entreprise, en Javascript avec fr
 
 ## Pour tester l'application
 ### Conditions préalables
-- [Node.js et npm](https://nodejs.org/fr/) - Environnement d’exécution JavaScript (à) installé(er) localement sur votre machine
+- [Node.js et npm](https://nodejs.org/fr/) : environnement d’exécution (à) installé(er) localement sur votre machine
+- le fichier dotenv (.env) contenant les variables d'environnement
+- éventuellement : les identifiants (Nom/Email/Password) d'un compte existant dans la BDD 
 
 ### Installation de l'app
 
 1. Cloner l'ensemble de ce dépôt GitHub  
 
-2. Dans un terminal, accéder au dossier du __frontend__ :
- - Installer les dépendances : ``npm install`` 
- - Démarer le serveur : ``npm run start`` 
+2. Ajouter à la racine du dossier backend, le fichier de configuration __nommé ".env"__, qui vous a été fourni dans les livrables post-soutenance. Dans d'autres circonstances, veuillez m'en faire la demande :) 
 
-3. Ajouter à la racine du backend, le fichier de configuration __nommé ".env"__, qui vous a été fourni dans les livrables post-soutenance. Dans d'autres circonstances, veuillez m'en faire la demande :) 
-
-4. Dans un autre terminal, accéder au dossier du __backend__ :
+3. Dans un terminal, accéder au dossier du __backend__ :
  - Installer les dépendances : ``npm install`` 
  - Lancer le serveur : ``npm run start`` 
+
+4. Dans un autre terminal, accéder au dossier du __frontend__ :
+ - Installer les dépendances : ``npm install`` 
+ - Démarer le serveur : ``npm run start`` 
 
 5. Rendez-vous sur http://localhost:3000/ 
 
