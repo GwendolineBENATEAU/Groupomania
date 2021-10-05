@@ -13,7 +13,7 @@ Le projet consiste à construire un réseau social interne pour les employés de
 
 
 ### Objectif
-Réalisation d'un MVP pour un réseau social d'entreprise, en Javascript avec framework Front-End de son choix (React, Vue, Angular, Ember, Meteor, Aurelia...) sauf framework Symfony, connecté à une base de données relationnelles qui se manipule avec le langage SQL et dans le respect des standards WCAG.
+Réalisation d'un MVP pour un réseau social d'entreprise, en Javascript, avec framework Front-End de son choix (React, Vue, Angular, Ember, Meteor, Aurelia...) sauf framework Symfony, connecté à une base de données relationnelles qui se manipule avec le langage SQL et dans le respect des standards WCAG.
 
 
 ### Compétences évaluées
