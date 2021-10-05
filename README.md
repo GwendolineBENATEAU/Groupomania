@@ -37,7 +37,7 @@ Réalisation d'un MVP pour un réseau social d'entreprise, en Javascript, avec f
 
 3. Dans un terminal, accéder au dossier du __backend__ :
  - Installer les dépendances : ``npm install`` 
- - Lancer le serveur : ``npm run start`` 
+ - Démarer le serveur : ``npm run start`` 
 
 4. Dans un autre terminal, accéder au dossier du __frontend__ :
  - Installer les dépendances : ``npm install`` 
