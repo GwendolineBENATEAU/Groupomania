@@ -27,7 +27,7 @@ Réalisation d'un MVP pour un réseau social d'entreprise, en Javascript, avec f
 ### Conditions préalables
 - [Node.js et npm](https://nodejs.org/fr/) : environnement d’exécution (à) installé(er) localement sur votre machine
 - le fichier dotenv (.env) contenant les variables d'environnement
-- éventuellement : les identifiants (Nom/Email/Password) d'un compte existant dans la BDD 
+- éventuellement : les identifiants (Email/MotDePasse) d'un compte existant dans la BDD 
 
 ### Installation de l'app
 
