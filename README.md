@@ -2,7 +2,7 @@
 
 
 # Groupomania 
-Groupomania est le 7e projet fictif à caractère pédagique de la formation de Dévéloppeur Web (OpenClassRooms) qui consiste à créer un réseau social d’entreprise.
+Groupomania est le 7e projet fictif à caractère pédagogique de la formation de Développeur Web (OpenClassRooms) qui consiste à créer un réseau social d’entreprise.
 
 ## Description du projet
 ### Scénario
