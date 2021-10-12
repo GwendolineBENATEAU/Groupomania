@@ -50,7 +50,7 @@ Réalisation d'un MVP pour un réseau social d'entreprise, en Javascript, avec f
 - [VisualStudioCode](https://code.visualstudio.com/) - Editeur de texte open source
 - [GitKraken](https://www.gitkraken.com/) - Outil de versionning (client)
 
-## Stack technique back-end et BDD
+## Stack technique
 - React + Material-UI
 - Strapi (Node.js) *
 - MySQL
