@@ -61,6 +61,8 @@ Réalisation d'un MVP pour un réseau social d'entreprise, en Javascript, avec f
 
 ## Présentation du projet
 - Diaporama de présentation du projet [Groupomania](https://www.canva.com/design/DAEm-sMwB68/ohdK53m7EVoQ3zw5m3SckQ/view?utm_content=DAEm-sMwB68&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+- Appréciation de l'évaluateur : 
+> *"Livrables respectent parfaitement les critères demandés. Une bonne présentation avec une bonne maîtrise du sujet."* - Hamza Fahi
 
 ## Auteurs
 Gwendoline Bénateau
