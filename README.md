@@ -1,4 +1,4 @@
-![Groupomania](https://github.com/GwendolineBENATEAU/GwendolineBenateau_7_3107021_Groupomania/blob/master/docs/Groupomania_Pr%C3%A9sentation_P7.jpg)
+![Groupomania](https://github.com/GwendolineBENATEAU/Groupomania/blob/master/docs/Groupomania_Pr%C3%A9sentation_P7.jpg)
 
 
 # Groupomania 
@@ -6,10 +6,10 @@ Groupomania est le 7e projet individuel à caractère pédagogique du parcours f
 
 ## Description du projet
 ### Scénario
-Le projet consiste à construire un réseau social interne pour les employés de Groupomania, un groupe spécialisé dans la grande distribution (clients de Connect-E). Le but de cet outil est de faciliter les interactions entre collègues. Le département RH de Groupomania a laissé libre cours à son imagination mais a toutefois réfléchi aux fonctionnalités à intégrer dans le produit... ([lire la suite](https://github.com/GwendolineBENATEAU/GwendolineBenateau_7_3107021_Groupomania/blob/master/docs/Groupomania_Perimetre_DWJ_OC.pdf))
+Le projet consiste à construire un réseau social interne pour les employés de Groupomania, un groupe spécialisé dans la grande distribution (clients de Connect-E). Le but de cet outil est de faciliter les interactions entre collègues. Le département RH de Groupomania a laissé libre cours à son imagination mais a toutefois réfléchi aux fonctionnalités à intégrer dans le produit... ([lire la suite](https://github.com/GwendolineBENATEAU/Groupomania/blob/master/docs/Groupomania_Perimetre_DWJ_OC.pdf))
 
 ### Documentation 
-[Spécifications fonctionnelles](https://github.com/GwendolineBENATEAU/GwendolineBenateau_7_3107021_Groupomania/blob/master/docs/Groupomania_Specs_DWJ_OC.pdf)
+[Spécifications fonctionnelles](https://github.com/GwendolineBENATEAU/Groupomania/blob/master/docs/Groupomania_Specs_DWJ_OC.pdf)
 
 
 ### Objectif
